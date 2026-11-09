@@ -92,5 +92,10 @@ namespace SistemaGestionCitas
         {
 
         }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
