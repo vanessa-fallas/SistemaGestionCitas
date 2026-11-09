@@ -38,7 +38,6 @@ SistemaGestionCitas/
 │   └── propuesta.md
 └── SistemaGestionCitas/
     ├── FormPrincipal.cs
-    ├── FormClientes.cs
     ├── FormCitas.cs
     └── Program.cs
 
