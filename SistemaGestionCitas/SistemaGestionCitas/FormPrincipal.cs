@@ -18,6 +18,9 @@ namespace SistemaGestionCitas
         }
 
         List<string[]> LClientes = new List<string[]>();
+
+        List<string[]> LServicios = new List<string[]>();
+
         private void registrarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -44,6 +47,8 @@ namespace SistemaGestionCitas
         {
             pnlInicio.Visible = false;
             pnlClientes.Visible = true;
+            pnlServicios.Visible = false;
+            pnlAgregarServicios.Visible = false;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -91,6 +96,122 @@ namespace SistemaGestionCitas
         private void pnlClientes_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnAgregarServicio_Click(object sender, EventArgs e)
+        {
+            pnlAgregarServicios.Visible = true;
+            pnlServicios.Visible = false;
+        }
+
+        private void regristrarServiciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlServicios.Visible = true;
+            pnlInicio.Visible = false;
+            pnlClientes.Visible = false;
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            pnlAgregarServicios.Visible=false;
+            pnlServicios.Visible=true;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string NombreTexto = txtNServicio.Text.Trim();
+            string PrecioTexto = txtPServicio.Text.Trim();
+            string DuracionTexto = txtDServicio.Text.Trim();
+
+            bool NombreRepetido = false;
+
+            foreach (string[] Servicio in LServicios)
+            {
+                if (Servicio[0].Equals(NombreTexto, StringComparison.OrdinalIgnoreCase))
+                {
+                    NombreRepetido = true;
+                    break;
+                }
+            }
+
+            if (NombreTexto == "" || NombreRepetido)
+            {
+                MessageBox.Show("Entrada no valida en 'Nombre del servicio: '");
+            }
+            else if (!decimal.TryParse(PrecioTexto, out decimal Precio) || Precio < 0)
+            {
+                MessageBox.Show("Entrada no valida en 'Precio: '");
+            }
+            else if (!int.TryParse(DuracionTexto, out int Duracion) || Duracion <= 0)
+            {
+                MessageBox.Show("Entrada no valida en 'Duración en minutos: '");
+            }
+            else
+            {
+                string Estado;
+
+                if (chkDisponibilidad.Checked)
+                {
+                    Estado = "Disponible";
+                }
+                else
+                {
+                    Estado = "No disponible";
+                }
+
+                string[] DatosServicio = {NombreTexto, PrecioTexto, DuracionTexto, Estado};
+
+                LServicios.Add(DatosServicio);
+                ActualizarContadores();
+
+                dgvServicios.Rows.Add(NombreTexto,PrecioTexto,DuracionTexto,Estado);
+
+                MessageBox.Show("Servicio registrado correctamente.");
+
+                txtNServicio.Clear();
+                txtDServicio.Clear();
+                txtPServicio.Clear();
+
+                pnlAgregarServicios.Visible = false;
+                pnlServicios.Visible = true;
+            }
+        }
+
+        private void btnActualizarLista_Click(object sender, EventArgs e)
+        {
+            string Busqueda = txtBuscarServicio.Text.Trim();
+
+            dgvServicios.Rows.Clear();
+
+            foreach (string[] Servicio in LServicios)
+            {
+                if (Servicio[0].IndexOf(Busqueda, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    dgvServicios.Rows.Add(Servicio[0],Servicio[1],Servicio[2],Servicio[3]);
+                }
+            }
+
+            if (dgvServicios.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron servicios.");
+            }
+        }
+
+        private void ActualizarContadores()
+        {
+            int Total = LServicios.Count;
+            int Disponibles = 0;
+
+            foreach (string[] Servicio in LServicios)
+            {
+                if (Servicio[3] == "Disponible")
+                {
+                    Disponibles++;
+                }
+            }
+
+            lblTotalServicios.Text = "Total: " + Total;
+            lblDisponibles.Text = "Disponibles: " + Disponibles;
         }
     }
 }
