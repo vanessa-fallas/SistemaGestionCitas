@@ -213,5 +213,10 @@ namespace SistemaGestionCitas
             lblTotalServicios.Text = "Total: " + Total;
             lblDisponibles.Text = "Disponibles: " + Disponibles;
         }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

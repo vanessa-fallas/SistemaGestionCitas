@@ -113,7 +113,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,21 +124,21 @@
             this.registrarClientesToolStripMenuItem,
             this.regristrarServiciosToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.pacientesToolStripMenuItem.Text = "Clientes y Servicios";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
             // registrarClientesToolStripMenuItem
             // 
             this.registrarClientesToolStripMenuItem.Name = "registrarClientesToolStripMenuItem";
-            this.registrarClientesToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.registrarClientesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.registrarClientesToolStripMenuItem.Text = "Registrar Clientes";
             this.registrarClientesToolStripMenuItem.Click += new System.EventHandler(this.registrarClientesToolStripMenuItem_Click);
             // 
             // regristrarServiciosToolStripMenuItem
             // 
             this.regristrarServiciosToolStripMenuItem.Name = "regristrarServiciosToolStripMenuItem";
-            this.regristrarServiciosToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.regristrarServiciosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.regristrarServiciosToolStripMenuItem.Text = "Servicios Disponibles";
             this.regristrarServiciosToolStripMenuItem.Click += new System.EventHandler(this.regristrarServiciosToolStripMenuItem_Click);
             // 
@@ -149,45 +150,45 @@
             this.modificarOCancelarCitaToolStripMenuItem,
             this.cancelarCitasToolStripMenuItem});
             this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.citasToolStripMenuItem.Text = "Citas";
             // 
             // registrarCitaToolStripMenuItem
             // 
             this.registrarCitaToolStripMenuItem.Name = "registrarCitaToolStripMenuItem";
-            this.registrarCitaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.registrarCitaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.registrarCitaToolStripMenuItem.Text = "Registrar Cita";
             this.registrarCitaToolStripMenuItem.Click += new System.EventHandler(this.registrarCitaToolStripMenuItem_Click);
             // 
             // consultarCitasToolStripMenuItem
             // 
             this.consultarCitasToolStripMenuItem.Name = "consultarCitasToolStripMenuItem";
-            this.consultarCitasToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.consultarCitasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.consultarCitasToolStripMenuItem.Text = "Consultar Citas";
             // 
             // modificarOCancelarCitaToolStripMenuItem
             // 
             this.modificarOCancelarCitaToolStripMenuItem.Name = "modificarOCancelarCitaToolStripMenuItem";
-            this.modificarOCancelarCitaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.modificarOCancelarCitaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.modificarOCancelarCitaToolStripMenuItem.Text = "Modificar Citas";
             // 
             // cancelarCitasToolStripMenuItem
             // 
             this.cancelarCitasToolStripMenuItem.Name = "cancelarCitasToolStripMenuItem";
-            this.cancelarCitasToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.cancelarCitasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.cancelarCitasToolStripMenuItem.Text = "Cancelar Citas";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(31, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(25, 20);
             this.toolStripMenuItem1.Text = "  ";
             // 
             // pnlInicio
@@ -195,17 +196,19 @@
             this.pnlInicio.Controls.Add(this.lblSeleccion);
             this.pnlInicio.Controls.Add(this.lblBienvenida);
             this.pnlInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInicio.Location = new System.Drawing.Point(0, 28);
+            this.pnlInicio.Location = new System.Drawing.Point(0, 24);
+            this.pnlInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlInicio.Name = "pnlInicio";
-            this.pnlInicio.Size = new System.Drawing.Size(1067, 526);
+            this.pnlInicio.Size = new System.Drawing.Size(800, 426);
             this.pnlInicio.TabIndex = 1;
             // 
             // lblSeleccion
             // 
             this.lblSeleccion.AutoSize = true;
-            this.lblSeleccion.Location = new System.Drawing.Point(426, 32);
+            this.lblSeleccion.Location = new System.Drawing.Point(320, 26);
+            this.lblSeleccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSeleccion.Name = "lblSeleccion";
-            this.lblSeleccion.Size = new System.Drawing.Size(205, 16);
+            this.lblSeleccion.Size = new System.Drawing.Size(165, 13);
             this.lblSeleccion.TabIndex = 1;
             this.lblSeleccion.Text = "Seleccione una opción del  menú";
             this.lblSeleccion.Click += new System.EventHandler(this.label1_Click);
@@ -214,9 +217,10 @@
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(372, 0);
+            this.lblBienvenida.Location = new System.Drawing.Point(279, 0);
+            this.lblBienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(318, 32);
+            this.lblBienvenida.Size = new System.Drawing.Size(250, 26);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido al Sistema";
             // 
@@ -361,9 +365,10 @@
             // 
             this.lblTituloClientes.AutoSize = true;
             this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloClientes.Location = new System.Drawing.Point(386, 0);
+            this.lblTituloClientes.Location = new System.Drawing.Point(290, 0);
+            this.lblTituloClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloClientes.Name = "lblTituloClientes";
-            this.lblTituloClientes.Size = new System.Drawing.Size(290, 32);
+            this.lblTituloClientes.Size = new System.Drawing.Size(228, 26);
             this.lblTituloClientes.TabIndex = 0;
             this.lblTituloClientes.Text = "Registro de Clientes";
             // 
@@ -371,60 +376,68 @@
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(36, 73);
+            this.lblCedula.Location = new System.Drawing.Point(27, 59);
+            this.lblCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(73, 20);
+            this.lblCedula.Size = new System.Drawing.Size(63, 17);
             this.lblCedula.TabIndex = 1;
             this.lblCedula.Text = "Cédula:";
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(126, 71);
+            this.txtCedula.Location = new System.Drawing.Point(94, 58);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(226, 22);
+            this.txtCedula.Size = new System.Drawing.Size(170, 20);
             this.txtCedula.TabIndex = 2;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(36, 111);
+            this.lblNombre.Location = new System.Drawing.Point(27, 90);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(165, 20);
+            this.lblNombre.Size = new System.Drawing.Size(141, 17);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre Completo:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(230, 109);
+            this.txtNombre.Location = new System.Drawing.Point(172, 89);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(336, 22);
+            this.txtNombre.Size = new System.Drawing.Size(253, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(36, 148);
+            this.lblTelefono.Location = new System.Drawing.Point(27, 120);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(87, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(77, 17);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Teléfono:";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(140, 146);
+            this.txtTelefono.Location = new System.Drawing.Point(105, 119);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(176, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(133, 20);
             this.txtTelefono.TabIndex = 6;
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(41, 189);
+            this.btnRegistrar.Location = new System.Drawing.Point(31, 154);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(117, 31);
+            this.btnRegistrar.Size = new System.Drawing.Size(88, 25);
             this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -434,9 +447,10 @@
             // 
             this.btnLimpiar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(180, 189);
+            this.btnLimpiar.Location = new System.Drawing.Point(135, 154);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(99, 31);
+            this.btnLimpiar.Size = new System.Drawing.Size(74, 25);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -451,12 +465,13 @@
             this.colCedula,
             this.colNombre,
             this.colTelefono});
-            this.dgvClientes.Location = new System.Drawing.Point(40, 254);
+            this.dgvClientes.Location = new System.Drawing.Point(30, 206);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(817, 249);
+            this.dgvClientes.Size = new System.Drawing.Size(613, 202);
             this.dgvClientes.TabIndex = 9;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -494,9 +509,10 @@
             this.pnlClientes.Controls.Add(this.lblCedula);
             this.pnlClientes.Controls.Add(this.lblTituloClientes);
             this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlClientes.Location = new System.Drawing.Point(0, 28);
+            this.pnlClientes.Location = new System.Drawing.Point(0, 24);
+            this.pnlClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(1067, 526);
+            this.pnlClientes.Size = new System.Drawing.Size(800, 426);
             this.pnlClientes.TabIndex = 3;
             this.pnlClientes.Visible = false;
             this.pnlClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlClientes_Paint);
@@ -733,16 +749,13 @@
             // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.pnlAgregarServicios);
-            this.Controls.Add(this.pnlServicios);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlInicio);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestión de Citas";

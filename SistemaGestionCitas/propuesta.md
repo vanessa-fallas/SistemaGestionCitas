@@ -51,9 +51,9 @@ Desarrollar una aplicación de escritorio utilizando C# y Windows Forms que perm
 ## Distribución Inicial de Tareas
 1.Brithany Fallas Angulo:Creacion de la conexion de git y GitHub
 2.Yorleny Angulo Chamorro:Creaciòn de README.md y propuesta.md
-3.Leandro Aragón Arias:
-4.Josué Rodríguez Agüero:
+3.Leandro Aragón Arias: Funcionalidad y servicios disponibles.
+4.Josué Rodríguez Agüero: Panel inicial, registro de clientes y funcionalidad.
 5. Veronica Nuñez Cubillo:
 
 
-hOLA ESTO ES UN CAMBIO
+
