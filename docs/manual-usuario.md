@@ -52,4 +52,4 @@ El sistema muestra mensajes para informar sobre las operaciones realizadas, por 
 
 Para cerrar la aplicación, seleccionar la opción "Salir" del menú principal.
 
-**Nota:** La información se almacena temporalmente en memoria. Al cerrar la aplicación, los registros se pierden, ya que actualmente no se utiliza una base de datos.
+
