@@ -1,0 +1,158 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SistemaGestionCitas
+{
+    public partial class FormCitas : Form
+    {
+        public FormCitas()
+        {
+            InitializeComponent();
+            cmbServicio.Items.Clear();
+
+            foreach (string[] Servicio in FormPrincipal.LServicios)
+            {
+                if (Servicio[3] == "Disponible")
+                {
+                    cmbServicio.Items.Add(Servicio[0]);
+                }
+            }
+
+            cmbCliente.Items.Clear();
+
+            foreach (string[] Cliente in FormPrincipal.LClientes)
+            {
+                cmbCliente.Items.Add(Cliente[1]);
+            }
+        }
+
+        private void btnRegistrarCIta_Click(object sender, EventArgs e)
+        {
+            string Cliente = cmbCliente.Text;
+            string Servicio = cmbServicio.Text;
+
+            string Fecha = dtpFecha.Value.ToShortDateString();
+            string Hora = dtpHora.Value.ToShortTimeString();
+
+            if (Cliente == "" || Servicio == "")
+            {
+                MessageBox.Show("Debe seleccionar un cliente y un servicio.");
+            }
+            else
+            {
+
+                string[] DatosCita = { Cliente, Servicio, Fecha, Hora, };
+
+                FormPrincipal.LCitas.Add(DatosCita);
+
+                MessageBox.Show("Cita registrada correctamente.");
+
+            }
+        }
+
+        private void registrarCitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlInicioGestionCitas.Visible = false;
+            pnlRegistrarCita.Visible = true;
+            pnlConsultarCitas.Visible = false;
+        }
+
+        private void volverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            FormPrincipal formulario = Application.OpenForms["FormPrincipal"] as FormPrincipal;
+
+            if (formulario != null)
+            {
+                formulario.Show();
+            }
+        }
+
+        private void CargarCitas()
+        {
+            dgvConsultaCitas.Rows.Clear();
+
+            if (FormPrincipal.LCitas.Count == 0)
+            {
+                MessageBox.Show("No hay citas registradas.");
+                return;
+            }
+
+            foreach (string[] Cita in FormPrincipal.LCitas)
+            {
+                dgvConsultaCitas.Rows.Add(Cita[0], Cita[1], Cita[2], Cita[3]);
+            }
+        }
+
+        private void CargarFiltros()
+        {
+            cmbConsultaCliente.Items.Clear();
+            cmbConsultaServicio.Items.Clear();
+
+            cmbConsultaCliente.Items.Add("Todos");
+            cmbConsultaServicio.Items.Add("Todos");
+
+            foreach (string[] Cita in FormPrincipal.LCitas)
+            {
+                if (!cmbConsultaCliente.Items.Contains(Cita[0]))
+                {
+                    cmbConsultaCliente.Items.Add(Cita[0]);
+                }
+
+                if (!cmbConsultaServicio.Items.Contains(Cita[1]))
+                {
+                    cmbConsultaServicio.Items.Add(Cita[1]);
+                }
+            }
+        }
+
+        private void consultarCitasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlInicioGestionCitas.Visible = false;
+            pnlRegistrarCita.Visible = false;
+            pnlConsultarCitas.Visible = true;
+            CargarCitas();
+            CargarFiltros();
+        }
+
+        private void btnConsultaBuscar_Click(object sender, EventArgs e)
+        {
+            dgvConsultaCitas.Rows.Clear();
+
+            string ClienteSeleccionado = cmbConsultaCliente.Text;
+            string ServicioSeleccionado = cmbConsultaServicio.Text;
+            string FechaSeleccionada = dtpConsultaFecha.Value.ToShortDateString();
+
+            int Contador = 0;
+
+            foreach (string[] Cita in FormPrincipal.LCitas)
+            {
+                bool CoincideCliente = ClienteSeleccionado == "Todos" || Cita[0] == ClienteSeleccionado;
+
+                bool CoincideServicio = ServicioSeleccionado == "Todos" || Cita[1] == ServicioSeleccionado;
+
+                bool CoincideFecha = !dtpConsultaFecha.Checked || Cita[2] == FechaSeleccionada;
+
+                if (CoincideCliente && CoincideServicio && CoincideFecha)
+                {
+                    dgvConsultaCitas.Rows.Add(Cita[0],Cita[1],Cita[2],Cita[3]);
+                    Contador++;
+                }
+            }
+
+            if (Contador == 0)
+            {
+                MessageBox.Show("No se encontraron citas con los filtros seleccionados.");
+            }
+
+        }
+    }
+}

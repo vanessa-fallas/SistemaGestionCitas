@@ -33,12 +33,7 @@
             this.registrarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regristrarServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarCitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarOCancelarCitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlInicio = new System.Windows.Forms.Panel();
             this.lblSeleccion = new System.Windows.Forms.Label();
             this.lblBienvenida = new System.Windows.Forms.Label();
@@ -109,11 +104,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
             this.citasToolStripMenuItem,
-            this.salirToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,7 +117,7 @@
             this.registrarClientesToolStripMenuItem,
             this.regristrarServiciosToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.pacientesToolStripMenuItem.Text = "Clientes y Servicios";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
@@ -143,61 +137,26 @@
             // 
             // citasToolStripMenuItem
             // 
-            this.citasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarCitaToolStripMenuItem,
-            this.consultarCitasToolStripMenuItem,
-            this.modificarOCancelarCitaToolStripMenuItem,
-            this.cancelarCitasToolStripMenuItem});
             this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.citasToolStripMenuItem.Text = "Citas";
-            // 
-            // registrarCitaToolStripMenuItem
-            // 
-            this.registrarCitaToolStripMenuItem.Name = "registrarCitaToolStripMenuItem";
-            this.registrarCitaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.registrarCitaToolStripMenuItem.Text = "Registrar Cita";
-            this.registrarCitaToolStripMenuItem.Click += new System.EventHandler(this.registrarCitaToolStripMenuItem_Click);
-            // 
-            // consultarCitasToolStripMenuItem
-            // 
-            this.consultarCitasToolStripMenuItem.Name = "consultarCitasToolStripMenuItem";
-            this.consultarCitasToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.consultarCitasToolStripMenuItem.Text = "Consultar Citas";
-            // 
-            // modificarOCancelarCitaToolStripMenuItem
-            // 
-            this.modificarOCancelarCitaToolStripMenuItem.Name = "modificarOCancelarCitaToolStripMenuItem";
-            this.modificarOCancelarCitaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.modificarOCancelarCitaToolStripMenuItem.Text = "Modificar Citas";
-            // 
-            // cancelarCitasToolStripMenuItem
-            // 
-            this.cancelarCitasToolStripMenuItem.Name = "cancelarCitasToolStripMenuItem";
-            this.cancelarCitasToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.cancelarCitasToolStripMenuItem.Text = "Cancelar Citas";
+            this.citasToolStripMenuItem.Click += new System.EventHandler(this.citasToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(31, 24);
-            this.toolStripMenuItem1.Text = "  ";
             // 
             // pnlInicio
             // 
             this.pnlInicio.Controls.Add(this.lblSeleccion);
             this.pnlInicio.Controls.Add(this.lblBienvenida);
             this.pnlInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInicio.Location = new System.Drawing.Point(0, 28);
+            this.pnlInicio.Location = new System.Drawing.Point(0, 30);
             this.pnlInicio.Name = "pnlInicio";
-            this.pnlInicio.Size = new System.Drawing.Size(1067, 526);
+            this.pnlInicio.Size = new System.Drawing.Size(1067, 524);
             this.pnlInicio.TabIndex = 1;
             // 
             // lblSeleccion
@@ -231,9 +190,9 @@
             this.pnlServicios.Controls.Add(this.lblBuscarServicio);
             this.pnlServicios.Controls.Add(this.lblTituloServicios);
             this.pnlServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlServicios.Location = new System.Drawing.Point(0, 28);
+            this.pnlServicios.Location = new System.Drawing.Point(0, 30);
             this.pnlServicios.Name = "pnlServicios";
-            this.pnlServicios.Size = new System.Drawing.Size(1067, 526);
+            this.pnlServicios.Size = new System.Drawing.Size(1067, 524);
             this.pnlServicios.TabIndex = 4;
             this.pnlServicios.Visible = false;
             // 
@@ -494,9 +453,9 @@
             this.pnlClientes.Controls.Add(this.lblCedula);
             this.pnlClientes.Controls.Add(this.lblTituloClientes);
             this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlClientes.Location = new System.Drawing.Point(0, 28);
+            this.pnlClientes.Location = new System.Drawing.Point(0, 30);
             this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(1067, 526);
+            this.pnlClientes.Size = new System.Drawing.Size(1067, 524);
             this.pnlClientes.TabIndex = 3;
             this.pnlClientes.Visible = false;
             this.pnlClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlClientes_Paint);
@@ -618,9 +577,9 @@
             this.pnlAgregarServicios.Controls.Add(this.lblDuracion);
             this.pnlAgregarServicios.Controls.Add(this.lblTituloAgregarServicio);
             this.pnlAgregarServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAgregarServicios.Location = new System.Drawing.Point(0, 28);
+            this.pnlAgregarServicios.Location = new System.Drawing.Point(0, 30);
             this.pnlAgregarServicios.Name = "pnlAgregarServicios";
-            this.pnlAgregarServicios.Size = new System.Drawing.Size(1067, 526);
+            this.pnlAgregarServicios.Size = new System.Drawing.Size(1067, 524);
             this.pnlAgregarServicios.TabIndex = 16;
             this.pnlAgregarServicios.Visible = false;
             // 
@@ -771,15 +730,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarCitaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarCitasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regristrarServiciosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarOCancelarCitaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelarCitasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel pnlInicio;
         private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Label lblSeleccion;

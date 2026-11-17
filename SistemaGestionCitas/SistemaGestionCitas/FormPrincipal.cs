@@ -17,9 +17,11 @@ namespace SistemaGestionCitas
             InitializeComponent();
         }
 
-        List<string[]> LClientes = new List<string[]>();
+        public static List<string[]> LClientes = new List<string[]>();
 
-        List<string[]> LServicios = new List<string[]>();
+        public static List<string[]> LServicios = new List<string[]>();
+
+        public static List<string[]> LCitas = new List<string[]>();
 
         private void registrarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -217,6 +219,14 @@ namespace SistemaGestionCitas
         private void txtCedula_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void citasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCitas formulario = new FormCitas();
+            formulario.Show();
+
+            this.Hide();
         }
     }
 }
