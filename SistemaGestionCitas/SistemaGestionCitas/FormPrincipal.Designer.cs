@@ -92,6 +92,12 @@
             this.lblNombreServicio = new System.Windows.Forms.Label();
             this.lblDuracion = new System.Windows.Forms.Label();
             this.lblTituloAgregarServicio = new System.Windows.Forms.Label();
+            this.lblBuscarcliente = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.btnMostrarTodos = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlInicio.SuspendLayout();
             this.pnlServicios.SuspendLayout();
@@ -113,7 +119,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,21 +130,21 @@
             this.registrarClientesToolStripMenuItem,
             this.regristrarServiciosToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.pacientesToolStripMenuItem.Text = "Clientes y Servicios";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
             // registrarClientesToolStripMenuItem
             // 
             this.registrarClientesToolStripMenuItem.Name = "registrarClientesToolStripMenuItem";
-            this.registrarClientesToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.registrarClientesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.registrarClientesToolStripMenuItem.Text = "Registrar Clientes";
             this.registrarClientesToolStripMenuItem.Click += new System.EventHandler(this.registrarClientesToolStripMenuItem_Click);
             // 
             // regristrarServiciosToolStripMenuItem
             // 
             this.regristrarServiciosToolStripMenuItem.Name = "regristrarServiciosToolStripMenuItem";
-            this.regristrarServiciosToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.regristrarServiciosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.regristrarServiciosToolStripMenuItem.Text = "Servicios Disponibles";
             this.regristrarServiciosToolStripMenuItem.Click += new System.EventHandler(this.regristrarServiciosToolStripMenuItem_Click);
             // 
@@ -149,45 +156,45 @@
             this.modificarOCancelarCitaToolStripMenuItem,
             this.cancelarCitasToolStripMenuItem});
             this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.citasToolStripMenuItem.Text = "Citas";
             // 
             // registrarCitaToolStripMenuItem
             // 
             this.registrarCitaToolStripMenuItem.Name = "registrarCitaToolStripMenuItem";
-            this.registrarCitaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.registrarCitaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.registrarCitaToolStripMenuItem.Text = "Registrar Cita";
             this.registrarCitaToolStripMenuItem.Click += new System.EventHandler(this.registrarCitaToolStripMenuItem_Click);
             // 
             // consultarCitasToolStripMenuItem
             // 
             this.consultarCitasToolStripMenuItem.Name = "consultarCitasToolStripMenuItem";
-            this.consultarCitasToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.consultarCitasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.consultarCitasToolStripMenuItem.Text = "Consultar Citas";
             // 
             // modificarOCancelarCitaToolStripMenuItem
             // 
             this.modificarOCancelarCitaToolStripMenuItem.Name = "modificarOCancelarCitaToolStripMenuItem";
-            this.modificarOCancelarCitaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.modificarOCancelarCitaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.modificarOCancelarCitaToolStripMenuItem.Text = "Modificar Citas";
             // 
             // cancelarCitasToolStripMenuItem
             // 
             this.cancelarCitasToolStripMenuItem.Name = "cancelarCitasToolStripMenuItem";
-            this.cancelarCitasToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.cancelarCitasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.cancelarCitasToolStripMenuItem.Text = "Cancelar Citas";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(31, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(25, 20);
             this.toolStripMenuItem1.Text = "  ";
             // 
             // pnlInicio
@@ -195,17 +202,19 @@
             this.pnlInicio.Controls.Add(this.lblSeleccion);
             this.pnlInicio.Controls.Add(this.lblBienvenida);
             this.pnlInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInicio.Location = new System.Drawing.Point(0, 28);
+            this.pnlInicio.Location = new System.Drawing.Point(0, 24);
+            this.pnlInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlInicio.Name = "pnlInicio";
-            this.pnlInicio.Size = new System.Drawing.Size(1067, 526);
+            this.pnlInicio.Size = new System.Drawing.Size(800, 426);
             this.pnlInicio.TabIndex = 1;
             // 
             // lblSeleccion
             // 
             this.lblSeleccion.AutoSize = true;
-            this.lblSeleccion.Location = new System.Drawing.Point(426, 32);
+            this.lblSeleccion.Location = new System.Drawing.Point(320, 26);
+            this.lblSeleccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSeleccion.Name = "lblSeleccion";
-            this.lblSeleccion.Size = new System.Drawing.Size(205, 16);
+            this.lblSeleccion.Size = new System.Drawing.Size(165, 13);
             this.lblSeleccion.TabIndex = 1;
             this.lblSeleccion.Text = "Seleccione una opción del  menú";
             this.lblSeleccion.Click += new System.EventHandler(this.label1_Click);
@@ -214,9 +223,10 @@
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(372, 0);
+            this.lblBienvenida.Location = new System.Drawing.Point(279, 0);
+            this.lblBienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(318, 32);
+            this.lblBienvenida.Size = new System.Drawing.Size(250, 26);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido al Sistema";
             // 
@@ -231,9 +241,10 @@
             this.pnlServicios.Controls.Add(this.lblBuscarServicio);
             this.pnlServicios.Controls.Add(this.lblTituloServicios);
             this.pnlServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlServicios.Location = new System.Drawing.Point(0, 28);
+            this.pnlServicios.Location = new System.Drawing.Point(0, 24);
+            this.pnlServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlServicios.Name = "pnlServicios";
-            this.pnlServicios.Size = new System.Drawing.Size(1067, 526);
+            this.pnlServicios.Size = new System.Drawing.Size(800, 426);
             this.pnlServicios.TabIndex = 4;
             this.pnlServicios.Visible = false;
             // 
@@ -248,14 +259,15 @@
             this.colPrecio,
             this.colDuracion,
             this.colEstado});
-            this.dgvServicios.Location = new System.Drawing.Point(40, 235);
+            this.dgvServicios.Location = new System.Drawing.Point(30, 191);
+            this.dgvServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvServicios.Name = "dgvServicios";
             this.dgvServicios.ReadOnly = true;
             this.dgvServicios.RowHeadersVisible = false;
             this.dgvServicios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvServicios.RowTemplate.Height = 24;
             this.dgvServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServicios.Size = new System.Drawing.Size(852, 268);
+            this.dgvServicios.Size = new System.Drawing.Size(639, 218);
             this.dgvServicios.TabIndex = 12;
             // 
             // ColNombreServicio
@@ -290,9 +302,10 @@
             // 
             this.btnActualizarLista.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnActualizarLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarLista.Location = new System.Drawing.Point(429, 141);
+            this.btnActualizarLista.Location = new System.Drawing.Point(322, 115);
+            this.btnActualizarLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnActualizarLista.Name = "btnActualizarLista";
-            this.btnActualizarLista.Size = new System.Drawing.Size(137, 31);
+            this.btnActualizarLista.Size = new System.Drawing.Size(103, 25);
             this.btnActualizarLista.TabIndex = 7;
             this.btnActualizarLista.Text = "Actualizar";
             this.btnActualizarLista.UseVisualStyleBackColor = false;
@@ -302,9 +315,10 @@
             // 
             this.btnAgregarServicio.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAgregarServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarServicio.Location = new System.Drawing.Point(40, 189);
+            this.btnAgregarServicio.Location = new System.Drawing.Point(30, 154);
+            this.btnAgregarServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregarServicio.Name = "btnAgregarServicio";
-            this.btnAgregarServicio.Size = new System.Drawing.Size(225, 31);
+            this.btnAgregarServicio.Size = new System.Drawing.Size(169, 25);
             this.btnAgregarServicio.TabIndex = 10;
             this.btnAgregarServicio.Text = "Agregar Servicio";
             this.btnAgregarServicio.UseVisualStyleBackColor = false;
@@ -314,26 +328,29 @@
             // 
             this.lblDisponibles.AutoSize = true;
             this.lblDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisponibles.Location = new System.Drawing.Point(167, 73);
+            this.lblDisponibles.Location = new System.Drawing.Point(125, 59);
+            this.lblDisponibles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDisponibles.Name = "lblDisponibles";
-            this.lblDisponibles.Size = new System.Drawing.Size(130, 20);
+            this.lblDisponibles.Size = new System.Drawing.Size(111, 17);
             this.lblDisponibles.TabIndex = 3;
             this.lblDisponibles.Text = "Disponibles: 0";
             // 
             // txtBuscarServicio
             // 
-            this.txtBuscarServicio.Location = new System.Drawing.Point(40, 146);
+            this.txtBuscarServicio.Location = new System.Drawing.Point(30, 119);
+            this.txtBuscarServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscarServicio.Name = "txtBuscarServicio";
-            this.txtBuscarServicio.Size = new System.Drawing.Size(365, 22);
+            this.txtBuscarServicio.Size = new System.Drawing.Size(275, 20);
             this.txtBuscarServicio.TabIndex = 2;
             // 
             // lblTotalServicios
             // 
             this.lblTotalServicios.AutoSize = true;
             this.lblTotalServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalServicios.Location = new System.Drawing.Point(36, 73);
+            this.lblTotalServicios.Location = new System.Drawing.Point(27, 59);
+            this.lblTotalServicios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalServicios.Name = "lblTotalServicios";
-            this.lblTotalServicios.Size = new System.Drawing.Size(73, 20);
+            this.lblTotalServicios.Size = new System.Drawing.Size(64, 17);
             this.lblTotalServicios.TabIndex = 1;
             this.lblTotalServicios.Text = "Total: 0";
             // 
@@ -341,9 +358,10 @@
             // 
             this.lblBuscarServicio.AutoSize = true;
             this.lblBuscarServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarServicio.Location = new System.Drawing.Point(36, 111);
+            this.lblBuscarServicio.Location = new System.Drawing.Point(27, 90);
+            this.lblBuscarServicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscarServicio.Name = "lblBuscarServicio";
-            this.lblBuscarServicio.Size = new System.Drawing.Size(248, 20);
+            this.lblBuscarServicio.Size = new System.Drawing.Size(212, 17);
             this.lblBuscarServicio.TabIndex = 11;
             this.lblBuscarServicio.Text = "Buscar servicio por nombre:";
             // 
@@ -351,9 +369,10 @@
             // 
             this.lblTituloServicios.AutoSize = true;
             this.lblTituloServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloServicios.Location = new System.Drawing.Point(386, 0);
+            this.lblTituloServicios.Location = new System.Drawing.Point(290, 0);
+            this.lblTituloServicios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloServicios.Name = "lblTituloServicios";
-            this.lblTituloServicios.Size = new System.Drawing.Size(295, 32);
+            this.lblTituloServicios.Size = new System.Drawing.Size(232, 26);
             this.lblTituloServicios.TabIndex = 0;
             this.lblTituloServicios.Text = "Gestion de Servicios";
             // 
@@ -361,9 +380,10 @@
             // 
             this.lblTituloClientes.AutoSize = true;
             this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloClientes.Location = new System.Drawing.Point(386, 0);
+            this.lblTituloClientes.Location = new System.Drawing.Point(290, 0);
+            this.lblTituloClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloClientes.Name = "lblTituloClientes";
-            this.lblTituloClientes.Size = new System.Drawing.Size(290, 32);
+            this.lblTituloClientes.Size = new System.Drawing.Size(228, 26);
             this.lblTituloClientes.TabIndex = 0;
             this.lblTituloClientes.Text = "Registro de Clientes";
             // 
@@ -371,60 +391,68 @@
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(36, 73);
+            this.lblCedula.Location = new System.Drawing.Point(27, 73);
+            this.lblCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(73, 20);
+            this.lblCedula.Size = new System.Drawing.Size(63, 17);
             this.lblCedula.TabIndex = 1;
             this.lblCedula.Text = "Cédula:";
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(126, 71);
+            this.txtCedula.Location = new System.Drawing.Point(91, 72);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(226, 22);
+            this.txtCedula.Size = new System.Drawing.Size(170, 20);
             this.txtCedula.TabIndex = 2;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(36, 111);
+            this.lblNombre.Location = new System.Drawing.Point(28, 123);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(165, 20);
+            this.lblNombre.Size = new System.Drawing.Size(141, 17);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre Completo:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(230, 109);
+            this.txtNombre.Location = new System.Drawing.Point(172, 124);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(336, 22);
+            this.txtNombre.Size = new System.Drawing.Size(253, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(36, 148);
+            this.lblTelefono.Location = new System.Drawing.Point(29, 158);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(87, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(77, 17);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Teléfono:";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(140, 146);
+            this.txtTelefono.Location = new System.Drawing.Point(110, 159);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(176, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(133, 20);
             this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(41, 189);
+            this.btnRegistrar.Location = new System.Drawing.Point(30, 198);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(117, 31);
+            this.btnRegistrar.Size = new System.Drawing.Size(88, 25);
             this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -433,10 +461,11 @@
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(180, 189);
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(128, 200);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(99, 31);
+            this.btnLimpiar.Size = new System.Drawing.Size(74, 25);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -451,12 +480,15 @@
             this.colCedula,
             this.colNombre,
             this.colTelefono});
-            this.dgvClientes.Location = new System.Drawing.Point(40, 254);
+            this.dgvClientes.Location = new System.Drawing.Point(31, 295);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(817, 249);
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(613, 202);
             this.dgvClientes.TabIndex = 9;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -483,6 +515,12 @@
             // 
             // pnlClientes
             // 
+            this.pnlClientes.Controls.Add(this.btnEliminar);
+            this.pnlClientes.Controls.Add(this.btnModificar);
+            this.pnlClientes.Controls.Add(this.btnMostrarTodos);
+            this.pnlClientes.Controls.Add(this.btnBuscarCliente);
+            this.pnlClientes.Controls.Add(this.txtBuscarCliente);
+            this.pnlClientes.Controls.Add(this.lblBuscarcliente);
             this.pnlClientes.Controls.Add(this.dgvClientes);
             this.pnlClientes.Controls.Add(this.btnLimpiar);
             this.pnlClientes.Controls.Add(this.btnRegistrar);
@@ -494,9 +532,10 @@
             this.pnlClientes.Controls.Add(this.lblCedula);
             this.pnlClientes.Controls.Add(this.lblTituloClientes);
             this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlClientes.Location = new System.Drawing.Point(0, 28);
+            this.pnlClientes.Location = new System.Drawing.Point(0, 24);
+            this.pnlClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(1067, 526);
+            this.pnlClientes.Size = new System.Drawing.Size(800, 426);
             this.pnlClientes.TabIndex = 3;
             this.pnlClientes.Visible = false;
             this.pnlClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlClientes_Paint);
@@ -520,14 +559,14 @@
             // 
             this.txtDuracion.Location = new System.Drawing.Point(244, 166);
             this.txtDuracion.Name = "txtDuracion";
-            this.txtDuracion.Size = new System.Drawing.Size(365, 22);
+            this.txtDuracion.Size = new System.Drawing.Size(365, 20);
             this.txtDuracion.TabIndex = 16;
             // 
             // txtNombreServicio
             // 
             this.txtNombreServicio.Location = new System.Drawing.Point(244, 71);
             this.txtNombreServicio.Name = "txtNombreServicio";
-            this.txtNombreServicio.Size = new System.Drawing.Size(365, 22);
+            this.txtNombreServicio.Size = new System.Drawing.Size(365, 20);
             this.txtNombreServicio.TabIndex = 15;
             // 
             // btnCancelarServicio
@@ -546,7 +585,7 @@
             this.chkDisponible.AutoSize = true;
             this.chkDisponible.Location = new System.Drawing.Point(41, 254);
             this.chkDisponible.Name = "chkDisponible";
-            this.chkDisponible.Size = new System.Drawing.Size(94, 20);
+            this.chkDisponible.Size = new System.Drawing.Size(75, 17);
             this.chkDisponible.TabIndex = 13;
             this.chkDisponible.Text = "Disponible";
             this.chkDisponible.UseVisualStyleBackColor = true;
@@ -557,7 +596,7 @@
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.Location = new System.Drawing.Point(36, 212);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(170, 20);
+            this.lblEstado.Size = new System.Drawing.Size(146, 17);
             this.lblEstado.TabIndex = 12;
             this.lblEstado.Text = "Estado del servicio";
             // 
@@ -578,7 +617,7 @@
             this.lblPrecioServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecioServicio.Location = new System.Drawing.Point(36, 123);
             this.lblPrecioServicio.Name = "lblPrecioServicio";
-            this.lblPrecioServicio.Size = new System.Drawing.Size(69, 20);
+            this.lblPrecioServicio.Size = new System.Drawing.Size(59, 17);
             this.lblPrecioServicio.TabIndex = 3;
             this.lblPrecioServicio.Text = "Precio:";
             // 
@@ -586,7 +625,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(140, 123);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(365, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(365, 20);
             this.txtPrecio.TabIndex = 2;
             // 
             // panel1
@@ -601,7 +640,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(244, 166);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 22);
+            this.textBox1.Size = new System.Drawing.Size(365, 20);
             this.textBox1.TabIndex = 16;
             // 
             // pnlAgregarServicios
@@ -618,33 +657,37 @@
             this.pnlAgregarServicios.Controls.Add(this.lblDuracion);
             this.pnlAgregarServicios.Controls.Add(this.lblTituloAgregarServicio);
             this.pnlAgregarServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAgregarServicios.Location = new System.Drawing.Point(0, 28);
+            this.pnlAgregarServicios.Location = new System.Drawing.Point(0, 24);
+            this.pnlAgregarServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlAgregarServicios.Name = "pnlAgregarServicios";
-            this.pnlAgregarServicios.Size = new System.Drawing.Size(1067, 526);
+            this.pnlAgregarServicios.Size = new System.Drawing.Size(800, 426);
             this.pnlAgregarServicios.TabIndex = 16;
             this.pnlAgregarServicios.Visible = false;
             // 
             // txtDServicio
             // 
-            this.txtDServicio.Location = new System.Drawing.Point(244, 166);
+            this.txtDServicio.Location = new System.Drawing.Point(183, 135);
+            this.txtDServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDServicio.Name = "txtDServicio";
-            this.txtDServicio.Size = new System.Drawing.Size(365, 22);
+            this.txtDServicio.Size = new System.Drawing.Size(275, 20);
             this.txtDServicio.TabIndex = 16;
             // 
             // txtNServicio
             // 
-            this.txtNServicio.Location = new System.Drawing.Point(244, 71);
+            this.txtNServicio.Location = new System.Drawing.Point(183, 58);
+            this.txtNServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNServicio.Name = "txtNServicio";
-            this.txtNServicio.Size = new System.Drawing.Size(365, 22);
+            this.txtNServicio.Size = new System.Drawing.Size(275, 20);
             this.txtNServicio.TabIndex = 15;
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(244, 300);
+            this.btnCancelar.Location = new System.Drawing.Point(183, 244);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(161, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 25);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -655,9 +698,10 @@
             this.chkDisponibilidad.AutoSize = true;
             this.chkDisponibilidad.Checked = true;
             this.chkDisponibilidad.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkDisponibilidad.Location = new System.Drawing.Point(41, 254);
+            this.chkDisponibilidad.Location = new System.Drawing.Point(31, 206);
+            this.chkDisponibilidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkDisponibilidad.Name = "chkDisponibilidad";
-            this.chkDisponibilidad.Size = new System.Drawing.Size(94, 20);
+            this.chkDisponibilidad.Size = new System.Drawing.Size(75, 17);
             this.chkDisponibilidad.TabIndex = 13;
             this.chkDisponibilidad.Text = "Disponible";
             this.chkDisponibilidad.UseVisualStyleBackColor = true;
@@ -666,9 +710,10 @@
             // 
             this.lblEstadoServicio.AutoSize = true;
             this.lblEstadoServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoServicio.Location = new System.Drawing.Point(36, 212);
+            this.lblEstadoServicio.Location = new System.Drawing.Point(27, 172);
+            this.lblEstadoServicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstadoServicio.Name = "lblEstadoServicio";
-            this.lblEstadoServicio.Size = new System.Drawing.Size(170, 20);
+            this.lblEstadoServicio.Size = new System.Drawing.Size(146, 17);
             this.lblEstadoServicio.TabIndex = 12;
             this.lblEstadoServicio.Text = "Estado del servicio";
             // 
@@ -676,9 +721,10 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(40, 300);
+            this.btnGuardar.Location = new System.Drawing.Point(30, 244);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(161, 31);
+            this.btnGuardar.Size = new System.Drawing.Size(121, 25);
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -688,26 +734,29 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(36, 123);
+            this.lblPrecio.Location = new System.Drawing.Point(27, 100);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(69, 20);
+            this.lblPrecio.Size = new System.Drawing.Size(59, 17);
             this.lblPrecio.TabIndex = 3;
             this.lblPrecio.Text = "Precio:";
             // 
             // txtPServicio
             // 
-            this.txtPServicio.Location = new System.Drawing.Point(126, 121);
+            this.txtPServicio.Location = new System.Drawing.Point(94, 98);
+            this.txtPServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPServicio.Name = "txtPServicio";
-            this.txtPServicio.Size = new System.Drawing.Size(365, 22);
+            this.txtPServicio.Size = new System.Drawing.Size(275, 20);
             this.txtPServicio.TabIndex = 2;
             // 
             // lblNombreServicio
             // 
             this.lblNombreServicio.AutoSize = true;
             this.lblNombreServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreServicio.Location = new System.Drawing.Point(36, 73);
+            this.lblNombreServicio.Location = new System.Drawing.Point(27, 59);
+            this.lblNombreServicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreServicio.Name = "lblNombreServicio";
-            this.lblNombreServicio.Size = new System.Drawing.Size(183, 20);
+            this.lblNombreServicio.Size = new System.Drawing.Size(157, 17);
             this.lblNombreServicio.TabIndex = 1;
             this.lblNombreServicio.Text = "Nombre del servicio:";
             // 
@@ -715,9 +764,10 @@
             // 
             this.lblDuracion.AutoSize = true;
             this.lblDuracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuracion.Location = new System.Drawing.Point(36, 166);
+            this.lblDuracion.Location = new System.Drawing.Point(27, 135);
+            this.lblDuracion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDuracion.Name = "lblDuracion";
-            this.lblDuracion.Size = new System.Drawing.Size(189, 20);
+            this.lblDuracion.Size = new System.Drawing.Size(162, 17);
             this.lblDuracion.TabIndex = 11;
             this.lblDuracion.Text = "Duración en minutos:";
             // 
@@ -725,24 +775,89 @@
             // 
             this.lblTituloAgregarServicio.AutoSize = true;
             this.lblTituloAgregarServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAgregarServicio.Location = new System.Drawing.Point(34, 19);
+            this.lblTituloAgregarServicio.Location = new System.Drawing.Point(26, 15);
+            this.lblTituloAgregarServicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloAgregarServicio.Name = "lblTituloAgregarServicio";
-            this.lblTituloAgregarServicio.Size = new System.Drawing.Size(326, 32);
+            this.lblTituloAgregarServicio.Size = new System.Drawing.Size(256, 26);
             this.lblTituloAgregarServicio.TabIndex = 0;
             this.lblTituloAgregarServicio.Text = "Agregar nuevo servicio";
             // 
+            // lblBuscarcliente
+            // 
+            this.lblBuscarcliente.AutoSize = true;
+            this.lblBuscarcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarcliente.Location = new System.Drawing.Point(484, 73);
+            this.lblBuscarcliente.Name = "lblBuscarcliente";
+            this.lblBuscarcliente.Size = new System.Drawing.Size(185, 16);
+            this.lblBuscarcliente.TabIndex = 10;
+            this.lblBuscarcliente.Text = "Buscar(cédula o nombre):";
+            this.lblBuscarcliente.Click += new System.EventHandler(this.lblBuscarcliente_Click);
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(525, 96);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscarCliente.TabIndex = 11;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCliente.Location = new System.Drawing.Point(479, 122);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCliente.TabIndex = 12;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // btnMostrarTodos
+            // 
+            this.btnMostrarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarTodos.Location = new System.Drawing.Point(560, 122);
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(124, 23);
+            this.btnMostrarTodos.TabIndex = 13;
+            this.btnMostrarTodos.Text = "Mostrar todos";
+            this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(213, 201);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(92, 23);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(311, 201);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(82, 23);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlAgregarServicios);
             this.Controls.Add(this.pnlServicios);
-            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlInicio);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestión de Citas";
@@ -833,6 +948,12 @@
         private System.Windows.Forms.Label lblNombreServicio;
         private System.Windows.Forms.Label lblDuracion;
         private System.Windows.Forms.Label lblTituloAgregarServicio;
+        private System.Windows.Forms.Label lblBuscarcliente;
+        private System.Windows.Forms.Button btnMostrarTodos;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

@@ -20,6 +20,7 @@ namespace SistemaGestionCitas
         List<string[]> LClientes = new List<string[]>();
 
         List<string[]> LServicios = new List<string[]>();
+        int IndiceClienteEditando = -1;
 
         private void registrarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -33,9 +34,8 @@ namespace SistemaGestionCitas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtCedula.Clear();
-            txtNombre.Clear();
-            txtTelefono.Clear();
+            SalirModoEdicion();
+            LimpiarCamposCliente();
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,34 +53,34 @@ namespace SistemaGestionCitas
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string CedulaTexto = txtCedula.Text.Trim();
-            string NombreTexto = txtNombre.Text.Trim();
-            string TelefonoTexto = txtTelefono.Text.Trim();
+            string cedula = txtCedula.Text.Trim();
+            string nombre = txtNombre.Text.Trim();
+            string telefono = txtTelefono.Text.Trim();
 
-            if (!int.TryParse(CedulaTexto, out int CedulaNum) || CedulaTexto=="")
+            string error = ValidarCliente(cedula, nombre, telefono);
+            if (error != "")
             {
-                MessageBox.Show("Entrada no valida en 'Cédula:'");
+                MessageBox.Show(error, "Datos no válidos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else if (NombreTexto == "")
+
+            string[] datos = { cedula, nombre, telefono };
+
+            if (IndiceClienteEditando == -1)
             {
-                MessageBox.Show("Entrada no valida en 'Nombre Completo:'");
-            }
-            else if (!int.TryParse(TelefonoTexto, out int TelefonoNum) || TelefonoTexto == "")
-            {
-                MessageBox.Show("Entrada no valida en 'Teléfono:'");
+                LClientes.Add(datos);
+                MessageBox.Show("Cliente registrado correctamente.");
             }
             else
             {
-                string[] DatosCliente = { CedulaTexto, NombreTexto, TelefonoTexto };
-                LClientes.Add(DatosCliente);
-                dgvClientes.Rows.Add(CedulaTexto,NombreTexto,TelefonoTexto);
-
-                MessageBox.Show("Cliente registrado correctamente");
-
-                txtCedula.Clear();
-                txtNombre.Clear();
-                txtTelefono.Clear();
+                LClientes[IndiceClienteEditando] = datos;
+                MessageBox.Show("Cliente modificado correctamente.");
+                SalirModoEdicion();
             }
+
+            LimpiarCamposCliente();
+            MostrarClientes("");
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -197,6 +197,62 @@ namespace SistemaGestionCitas
             }
         }
 
+        private string ValidarCliente(string cedula, string nombre, string telefono)
+        {
+            if (cedula == "" || nombre == "" || telefono == "")
+                return "Todos los campos son obligatorios.";
+
+            if (cedula.Length != 9 || !cedula.All(char.IsDigit))
+                return "La cédula debe tener 9 dígitos numéricos.";
+
+            if (nombre.Length < 3 || nombre.Length > 60)
+                return "El nombre debe tener entre 3 y 60 caracteres.";
+
+            if (telefono.Length != 8 || !telefono.All(char.IsDigit))
+                return "El teléfono debe tener 8 dígitos numéricos.";
+
+            for (int i = 0; i < LClientes.Count; i++)
+            {
+                if (i == IndiceClienteEditando) continue;
+                if (LClientes[i][0] == cedula)
+                    return "Ya existe un cliente con esa cédula.";
+            }
+            return "";
+        }
+
+        private int BuscarIndiceCliente(string cedula)
+        {
+            for (int i = 0; i < LClientes.Count; i++)
+                if (LClientes[i][0] == cedula) return i;
+            return -1;
+        }
+
+        private void MostrarClientes(string filtro)
+        {
+            dgvClientes.Rows.Clear();
+            foreach (string[] c in LClientes)
+            {
+                if (filtro == "" || c[0].Contains(filtro) ||
+                    c[1].IndexOf(filtro, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    dgvClientes.Rows.Add(c[0], c[1], c[2]);
+                }
+            }
+        }
+
+        private void SalirModoEdicion()
+        {
+            IndiceClienteEditando = -1;
+            txtCedula.ReadOnly = false;
+            btnRegistrar.Text = "Registrar";
+        }
+
+        private void LimpiarCamposCliente()
+        {
+            txtCedula.Clear();
+            txtNombre.Clear();
+            txtTelefono.Clear();
+        }
         private void ActualizarContadores()
         {
             int Total = LServicios.Count;
@@ -217,6 +273,69 @@ namespace SistemaGestionCitas
         private void txtCedula_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un cliente de la tabla.");
+                return;
+            }
+            string cedula = dgvClientes.CurrentRow.Cells[0].Value.ToString();
+            IndiceClienteEditando = BuscarIndiceCliente(cedula);
+
+            string[] c = LClientes[IndiceClienteEditando];
+            txtCedula.Text = c[0];
+            txtNombre.Text = c[1];
+            txtTelefono.Text = c[2];
+            txtCedula.ReadOnly = true;
+            btnRegistrar.Text = "Guardar cambios";
+
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBuscarcliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            MostrarClientes(txtBuscarCliente.Text.Trim());
+            if (dgvClientes.Rows.Count == 0)
+                MessageBox.Show("No se encontraron clientes.");
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            txtBuscarCliente.Clear();
+            MostrarClientes("");
+        }
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un cliente de la tabla.");
+                return;
+            }
+            string cedula = dgvClientes.CurrentRow.Cells[0].Value.ToString();
+            string nombre = dgvClientes.CurrentRow.Cells[1].Value.ToString();
+
+            DialogResult r = MessageBox.Show("¿Eliminar al cliente " + nombre + "?",
+                "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                LClientes.RemoveAt(BuscarIndiceCliente(cedula));
+                MostrarClientes(txtBuscarCliente.Text.Trim());
+            }
         }
     }
 }
