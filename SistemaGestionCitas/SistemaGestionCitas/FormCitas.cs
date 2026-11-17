@@ -12,6 +12,9 @@ namespace SistemaGestionCitas
 {
     public partial class FormCitas : Form
     {
+        private int IndiceCitaSeleccionada = -1;
+        private int IndiceCitaCancelar = -1;
+
         public FormCitas()
         {
             InitializeComponent();
@@ -33,6 +36,8 @@ namespace SistemaGestionCitas
             }
         }
 
+
+
         private void btnRegistrarCIta_Click(object sender, EventArgs e)
         {
             string Cliente = cmbCliente.Text;
@@ -48,7 +53,7 @@ namespace SistemaGestionCitas
             else
             {
 
-                string[] DatosCita = { Cliente, Servicio, Fecha, Hora, };
+                string[] DatosCita = { Cliente, Servicio, Fecha, Hora };
 
                 FormPrincipal.LCitas.Add(DatosCita);
 
@@ -57,12 +62,17 @@ namespace SistemaGestionCitas
             }
         }
 
+
         private void registrarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlInicioGestionCitas.Visible = false;
             pnlRegistrarCita.Visible = true;
             pnlConsultarCitas.Visible = false;
+            pnlModificarCita.Visible = false;
+            pnlCancelarCita.Visible = false;
         }
+
+
 
         private void volverToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -75,6 +85,8 @@ namespace SistemaGestionCitas
                 formulario.Show();
             }
         }
+
+
 
         private void CargarCitas()
         {
@@ -91,6 +103,8 @@ namespace SistemaGestionCitas
                 dgvConsultaCitas.Rows.Add(Cita[0], Cita[1], Cita[2], Cita[3]);
             }
         }
+
+
 
         private void CargarFiltros()
         {
@@ -114,14 +128,20 @@ namespace SistemaGestionCitas
             }
         }
 
+
+
         private void consultarCitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlInicioGestionCitas.Visible = false;
             pnlRegistrarCita.Visible = false;
             pnlConsultarCitas.Visible = true;
+            pnlModificarCita.Visible = false;
+            pnlCancelarCita.Visible = false;
             CargarCitas();
             CargarFiltros();
         }
+
+
 
         private void btnConsultaBuscar_Click(object sender, EventArgs e)
         {
@@ -152,7 +172,9 @@ namespace SistemaGestionCitas
             {
                 MessageBox.Show("No se encontraron citas con los filtros seleccionados.");
             }
-
         }
+
+
+
     }
 }

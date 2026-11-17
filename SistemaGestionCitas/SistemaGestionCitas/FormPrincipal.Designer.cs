@@ -34,9 +34,6 @@
             this.regristrarServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlInicio = new System.Windows.Forms.Panel();
-            this.lblSeleccion = new System.Windows.Forms.Label();
-            this.lblBienvenida = new System.Windows.Forms.Label();
             this.pnlServicios = new System.Windows.Forms.Panel();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
             this.ColNombreServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,8 +84,10 @@
             this.lblNombreServicio = new System.Windows.Forms.Label();
             this.lblDuracion = new System.Windows.Forms.Label();
             this.lblTituloAgregarServicio = new System.Windows.Forms.Label();
+            this.pnlInicio = new System.Windows.Forms.Panel();
+            this.lblSeleccion = new System.Windows.Forms.Label();
+            this.lblBienvenida = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.pnlInicio.SuspendLayout();
             this.pnlServicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -96,6 +95,7 @@
             this.pnlAgregarServicio.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlAgregarServicios.SuspendLayout();
+            this.pnlInicio.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -148,36 +148,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // pnlInicio
-            // 
-            this.pnlInicio.Controls.Add(this.lblSeleccion);
-            this.pnlInicio.Controls.Add(this.lblBienvenida);
-            this.pnlInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInicio.Location = new System.Drawing.Point(0, 30);
-            this.pnlInicio.Name = "pnlInicio";
-            this.pnlInicio.Size = new System.Drawing.Size(1067, 524);
-            this.pnlInicio.TabIndex = 1;
-            // 
-            // lblSeleccion
-            // 
-            this.lblSeleccion.AutoSize = true;
-            this.lblSeleccion.Location = new System.Drawing.Point(426, 32);
-            this.lblSeleccion.Name = "lblSeleccion";
-            this.lblSeleccion.Size = new System.Drawing.Size(205, 16);
-            this.lblSeleccion.TabIndex = 1;
-            this.lblSeleccion.Text = "Seleccione una opción del  menú";
-            this.lblSeleccion.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblBienvenida
-            // 
-            this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(372, 0);
-            this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(318, 32);
-            this.lblBienvenida.TabIndex = 0;
-            this.lblBienvenida.Text = "Bienvenido al Sistema";
             // 
             // pnlServicios
             // 
@@ -690,15 +660,44 @@
             this.lblTituloAgregarServicio.TabIndex = 0;
             this.lblTituloAgregarServicio.Text = "Agregar nuevo servicio";
             // 
+            // pnlInicio
+            // 
+            this.pnlInicio.Controls.Add(this.lblSeleccion);
+            this.pnlInicio.Controls.Add(this.lblBienvenida);
+            this.pnlInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInicio.Location = new System.Drawing.Point(0, 30);
+            this.pnlInicio.Name = "pnlInicio";
+            this.pnlInicio.Size = new System.Drawing.Size(1067, 524);
+            this.pnlInicio.TabIndex = 17;
+            // 
+            // lblSeleccion
+            // 
+            this.lblSeleccion.AutoSize = true;
+            this.lblSeleccion.Location = new System.Drawing.Point(426, 32);
+            this.lblSeleccion.Name = "lblSeleccion";
+            this.lblSeleccion.Size = new System.Drawing.Size(205, 16);
+            this.lblSeleccion.TabIndex = 1;
+            this.lblSeleccion.Text = "Seleccione una opción del  menú";
+            // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenida.Location = new System.Drawing.Point(372, 0);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(318, 32);
+            this.lblBienvenida.TabIndex = 0;
+            this.lblBienvenida.Text = "Bienvenido al Sistema";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.pnlInicio);
             this.Controls.Add(this.pnlAgregarServicios);
             this.Controls.Add(this.pnlServicios);
             this.Controls.Add(this.pnlClientes);
-            this.Controls.Add(this.pnlInicio);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -707,8 +706,6 @@
             this.Text = "Sistema de Gestión de Citas";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnlInicio.ResumeLayout(false);
-            this.pnlInicio.PerformLayout();
             this.pnlServicios.ResumeLayout(false);
             this.pnlServicios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).EndInit();
@@ -721,6 +718,8 @@
             this.panel1.PerformLayout();
             this.pnlAgregarServicios.ResumeLayout(false);
             this.pnlAgregarServicios.PerformLayout();
+            this.pnlInicio.ResumeLayout(false);
+            this.pnlInicio.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -734,9 +733,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regristrarServiciosToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlInicio;
-        private System.Windows.Forms.Label lblBienvenida;
-        private System.Windows.Forms.Label lblSeleccion;
         private System.Windows.Forms.Panel pnlServicios;
         private System.Windows.Forms.Button btnActualizarLista;
         private System.Windows.Forms.Label lblDisponibles;
@@ -787,6 +783,9 @@
         private System.Windows.Forms.Label lblNombreServicio;
         private System.Windows.Forms.Label lblDuracion;
         private System.Windows.Forms.Label lblTituloAgregarServicio;
+        private System.Windows.Forms.Panel pnlInicio;
+        private System.Windows.Forms.Label lblSeleccion;
+        private System.Windows.Forms.Label lblBienvenida;
     }
 }
 
