@@ -20,25 +20,33 @@ Facilitar la administración de citas y el registro de clientes/servicios median
 - **Control de versiones:** Git y GitHub
 - **Documentación:** Markdown
 
-## Funcionalidades Iniciales
-- Navegación mediante barra de menú principal.
-- Formulario de registro de clientes y servicios.
-- Formulario de agendamiento y consulta de citas.
-- Validación de campos obligatorios y formato de datos.
-- Confirmación de salida e interactividad.
+## Funcionalidades Principales
+-Navegación mediante menú principal.
+-Registro de clientes.
+-Registro y consulta de servicios.
+-Búsqueda de servicios.
+-Registro de citas.
+-Consulta y búsqueda de citas mediante filtros.
+-Modificación de citas.
+-Cancelación de citas.
+-Validación de datos y campos obligatorios.
 
 ## Estado
-Avance 1 - Primera versión funcional en desarrollo.
+Avance 2 - Finalización
 
 ## Estructura
 
 SistemaGestionCitas/
 ├── README.md
 ├── docs/
-│   └── propuesta.md
+│   ├── propuesta.md
+│   ├── manual-usuario.md
+│   └── manual-tecnico.md
 └── SistemaGestionCitas/
     ├── FormPrincipal.cs
+    ├── FormPrincipal.Designer.cs
     ├── FormCitas.cs
+    ├── FormCitas.Designer.cs
     └── Program.cs
 
 ## Ejecucion
